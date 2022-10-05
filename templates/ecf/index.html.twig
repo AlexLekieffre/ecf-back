@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}index {{parent()}} {% endblock %}
+{% block content %}
+{% include "parts/banniere.html.twig" %}
+
+
+<div class="container">
+            <div class="row">
+    {% for produit in produits %}
+        
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{produit.image}}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{produit.nom}}</h5>
+                        <p class="card-text">{{produit.descriptionCourte}}</p>
+                        <p class="card-price"><b>{{produit.tarif}}€</b></p>
+                        <a href="/produit/{{produit.id}}" class="btn btn-primary">Voir le produit</a>
+                    </div>
+                </div>
+          
+    {% endfor %}
+    
+  </div>
+        </div>
+
+{% endblock %}

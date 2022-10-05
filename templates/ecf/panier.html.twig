@@ -1,0 +1,12 @@
+{% include "base.html.twig" %}
+<h1 class="text-center">Mon panier</h1>
+
+{% block content %}
+
+{% if app.session %}
+    <p class="text-center my-auto"> <b> l'objet ID :  {{app.session.get('panierId')}} en quantité de {{app.session.get('panierQuantite')}} </b> </p>
+{% endif %}
+
+{% endblock %}
+
+{% block footer %}{% endblock %}
